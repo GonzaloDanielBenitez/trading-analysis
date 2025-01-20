@@ -1,11 +1,11 @@
+import {Auth0Provider} from '@auth0/auth0-react'
+import {createBrowserHistory} from 'history'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { createBrowserHistory } from 'history'
 import App from './App'
-import './index.css'
-import { Auth0Provider } from '@auth0/auth0-react'
-import { customDebug } from './utils/custom.debug'
 import authConfig from './auth.config.json'
+import './index.css'
+import {customDebug} from './utils/custom.debug'
 
 
 const browserHistory = createBrowserHistory()
@@ -24,7 +24,7 @@ const providerConfig = {
   onRedirectCallback,
   authorizationParams: {
     redirect_uri: window.location.origin,
-    ...(authConfig.audience ? { audience: authConfig.audience } : null),
+    ...(authConfig.audience ? {audience: authConfig.audience} : null),
   },
 }
 
